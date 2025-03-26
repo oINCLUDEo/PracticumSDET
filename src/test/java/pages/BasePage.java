@@ -4,6 +4,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import com.codeborne.selenide.SelenideElement;
 
+import static helpers.generateData.*;
 import static com.codeborne.selenide.Condition.visible;
 
 public class BasePage {
@@ -25,7 +26,7 @@ public class BasePage {
     }
     @Step("Ввод Пост Кода")
     public BasePage inputPostCode() {
-        inputPostCode.setValue("572014");
+        inputPostCode.setValue(generatePostCode());
         return this;
     }
 }
