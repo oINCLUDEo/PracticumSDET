@@ -18,13 +18,22 @@ public class BaseTest {
     }
 
     @Test(description = "Тест на заполнение формы")
-    public void testFormSubmission() {
+    public void formSubmissionTest() {
         BasePage basePage = page(BasePage.class);
         String postCode = generatePostCode();
 
-        basePage.clickAddCustomer()
+        basePage.clickAddCustomerButton()
                 .checkVisibilityForm()
-                .inputPostCode(postCode)
-                .inputFirstName(postCode);
+                .setValuePostCode(postCode)
+                .setValueFirstName(postCode);
+    }
+
+    @Test(description = "Тест сортировки клиентов")
+    public void sortClientsTest() {
+        BasePage basePage = page(BasePage.class);
+
+        basePage.clickCustomers()
+                .checkVisibilityCustomersTable()
+                .clickFirstNameSortButton(true);
     }
 }
