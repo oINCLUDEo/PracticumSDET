@@ -1,6 +1,10 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.BasePage;
@@ -8,6 +12,7 @@ import pages.BasePage;
 import static com.codeborne.selenide.Selenide.*;
 import static helpers.generateData.generatePostCode;
 
+@Epic("Управление клиентами")
 public class BaseTest {
     @BeforeClass
     public void setUp() {
@@ -17,7 +22,10 @@ public class BaseTest {
         open("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager");
     }
 
-    @Test(description = "Тест на заполнение формы")
+    @Test
+    @Feature("Клиентская форма")
+    @Story("Добавление нового Customer(а)")
+    @Description("Тест на заполнение формы")
     public void formSubmissionTest() {
         BasePage basePage = page(BasePage.class);
         String postCode = generatePostCode();
@@ -28,7 +36,10 @@ public class BaseTest {
                 .setValueFirstName(postCode);
     }
 
-    @Test(description = "Тест сортировки клиентов")
+    @Test
+    @Feature("Клиентская база")
+    @Story("Сортировка таблицы Customers")
+    @Description("Тест сортировки клиентов по First Name")
     public void sortClientsTest() {
         BasePage basePage = page(BasePage.class);
 
