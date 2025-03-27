@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >
-<suite name="BankingProject Test Suite" parallel="tests" thread-count="2">
+<suite name="BankingProject Test Suite" parallel="tests" thread-count="3">
     <test name="Add Customer Test">
         <classes>
             <class name="tests.BaseTest">
@@ -14,6 +14,15 @@
             <class name="tests.BaseTest">
                 <methods>
                     <include name="sortClientsTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Deletion Customer From Customers Table Test">
+        <classes>
+            <class name="tests.BaseTest">
+                <methods>
+                    <include name="deleteCustomerFromTableTest"/>
                 </methods>
             </class>
         </classes>

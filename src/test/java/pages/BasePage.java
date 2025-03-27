@@ -1,6 +1,9 @@
 package pages;
 
-import helpers.generateData;
+import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
+import helpers.GeneratedData;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import com.codeborne.selenide.SelenideElement;
@@ -9,18 +12,15 @@ import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import static com.codeborne.selenide.Condition.cssClass;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Selenide.sleep;
-import static helpers.generateData.*;
-import static com.codeborne.selenide.Condition.visible;
+import static helpers.GeneratedData.*;
 
 public class BasePage {
-    private static Logger log = LoggerFactory.getLogger(generateData.class);
+    private static Logger log = LoggerFactory.getLogger(GeneratedData.class);
 
     @FindBy(xpath = "//button[@ng-class='btnClass1']")
     private SelenideElement addCustomerButton;
@@ -30,11 +30,12 @@ public class BasePage {
     private SelenideElement addCustomerForm;
     @FindBy(css = "input[placeholder='Post Code']")
     private SelenideElement postCodeInput;
-
     @FindBy(css = "input[placeholder='First Name']")
     private SelenideElement firstNameInput;
     @FindBy(tagName = "table")
     private SelenideElement customersTable;
+    @FindBy(css = "tbody tr")
+    private ElementsCollection customersTableRows;
     @FindBy(css = "a[ng-click*='fName']")
     private SelenideElement firstNameSortButton;
     @FindBy(css = "span.fa-caret-down[ng-show*='fName'][ng-show*='!sortReverse']")
@@ -84,17 +85,20 @@ public class BasePage {
     public BasePage clickFirstNameSortButton(boolean ascending) {
         firstNameSortButton.shouldBe(visible, Duration.ofSeconds(3));
 
-        if (ascending) {
-            while (sortAscIcon.has(cssClass("ng-hide"))){
-                firstNameSortButton.click();
-            }
-        } else {
-            while (sortDescIcon.has(cssClass("ng-hide"))){
-                firstNameSortButton.click();
+        int maxAttempts = 3;
+        int attempts = 0;
+
+        while ((ascending && sortAscIcon.has(cssClass("ng-hide"))) ||
+                (!ascending && sortDescIcon.has(cssClass("ng-hide")))) {
+            firstNameSortButton.click();
+            attempts++;
+
+            if (attempts >= maxAttempts) {
+                throw new RuntimeException("Не удалось отсортировать First Name за " + maxAttempts + " попыток");
             }
         }
 
-        List<String> names = $$("tbody tr td:nth-child(1)").texts();
+        List<String> names = getCustomersFirstNames();
         List<String> sortedNames = new ArrayList<>(names);
         sortedNames.sort(ascending ? Comparator.naturalOrder() : Comparator.reverseOrder());
 
@@ -102,6 +106,32 @@ public class BasePage {
             throw new AssertionError("Ошибка сортировки. Ожидалось: " +
                     sortedNames + ", получено: " + names);
         }
+
+        return this;
+    }
+
+    @Step("Удаление Customer по арифмитической длине имени ")
+    public BasePage deleteCustomerFromTable(Integer closestFirstNameIndex) {
+        if (closestFirstNameIndex < 0 || closestFirstNameIndex >= customersTableRows.size()) {
+            throw new IllegalArgumentException("Неправильный индекс: " + closestFirstNameIndex);
+        }
+
+        SelenideElement targetRow = customersTableRows.get(closestFirstNameIndex);
+        String firstName = targetRow.$("td:nth-child(1)").getText();
+        String lastName = targetRow.$("td:nth-child(2)").getText();
+
+        log.info("Удаляем клиента: [{}] {} {}", closestFirstNameIndex, firstName, lastName);
+        targetRow.$("button").click();
+        log.info("Клиент {} {} успешно удален", firstName, lastName);
+
+        return this;
+    }
+
+    @Step("Проверка удаления нужного Customer")
+    public BasePage checkVisibilityDeletedCustomer(Integer customersCount, String firstNameDeletedCustomer,
+                                                   String lastNameDeletedCustomer) {
+        customersTableRows.shouldBe(CollectionCondition.size(customersCount - 1));
+        customersTable.shouldNotHave(text(firstNameDeletedCustomer + " " + lastNameDeletedCustomer));
 
         return this;
     }
