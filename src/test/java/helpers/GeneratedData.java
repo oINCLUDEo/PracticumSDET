@@ -15,6 +15,12 @@ public class GeneratedData {
         return postCode;
     }
 
+    public static String generateLastName() {
+        String lastName = faker.regexify("[A-Z][a-z]{3,10}");
+        log.info("Сгенерирован Last Name: '{}'", lastName);
+        return lastName;
+    }
+
     public static String createFirstNameFromPostCode(String postCode) {
         StringBuilder firstName = new StringBuilder();
 

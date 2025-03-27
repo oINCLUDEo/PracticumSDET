@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 
 import static com.codeborne.selenide.Condition.cssClass;
 import static com.codeborne.selenide.Condition.visible;
+import static org.testng.Assert.assertTrue;
 
 public class CustomersPage {
     private static Logger log = LoggerFactory.getLogger(CustomersPage.class);
@@ -34,15 +35,23 @@ public class CustomersPage {
     @FindBy(css = "span.fa-caret-up[ng-show*='fName'][ng-show*='sortReverse']")
     private SelenideElement sortDescIcon;
 
-    public static class CustomerForDeletion {
-        public final int index;
+    public static class Customer {
+        public final Integer index;
         public final String firstName;
         public final String lastName;
+        public final String postCode;
 
-        public CustomerForDeletion(int index, String firstName, String lastName) {
+        public Customer(int index, String firstName, String lastName) {
             this.index = index;
             this.firstName = firstName;
             this.lastName = lastName;
+            this.postCode = null;
+        }
+        public Customer(String firstName, String lastName, String postCode) {
+            this.index = null;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.postCode = postCode;
         }
     }
 
@@ -91,7 +100,7 @@ public class CustomersPage {
     }
 
     @Step("Получение клиента для удаления")
-    public CustomerForDeletion getClientForDeletion() {
+    public Customer getClientForDeletion() {
         List<String> customersFirstNames = getCustomersFirstNames();
         List<String> customersLastNames = getCustomersLastNames();
 
@@ -121,12 +130,26 @@ public class CustomersPage {
         String selectedLastName = customersLastNames.get(closestFirstNameIndex);
 
         log.info("Выбран клиент для удаления: [{}] {} {}", closestFirstNameIndex, selectedFirstName, selectedLastName);
-        return new CustomerForDeletion(closestFirstNameIndex, selectedFirstName, selectedLastName);
+        return new Customer(closestFirstNameIndex, selectedFirstName, selectedLastName);
     }
 
     @Step("Удаление клиента")
     public CustomersPage deleteCustomer(int index) {
         customersTableRows.get(index).$("button").click();
+        return this;
+    }
+
+    @Step("Поиск нужного Customer")
+    public CustomersPage findCustomer(String firstName, String lastName, String postCode) {
+        boolean customerFound = customersTableRows.stream()
+                .anyMatch(row -> row.$("td:nth-child(1)").getText().equals(firstName) &&
+                        row.$("td:nth-child(2)").getText().equals(lastName) &&
+                        row.$("td:nth-child(3)").getText().equals(postCode));
+
+        assertTrue(customerFound, "Клиент с данными: FirstName=" + firstName +
+                ", LastName=" + lastName +
+                ", PostCode=" + postCode +
+                " не найден в таблице!");
         return this;
     }
 }

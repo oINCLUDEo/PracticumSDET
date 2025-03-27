@@ -39,7 +39,6 @@ public class BaseTest {
         closeWebDriver();
     }
 
-    //TODO: Нужно добавить отправку формы и создание Last Name
     @Test
     @Feature("Клиентская форма")
     @Story("Добавление нового Customer(а)")
@@ -49,11 +48,19 @@ public class BaseTest {
         AddCustomerPage addCustomer = bankManager.openAddCustomerPage();
 
         String postCode = generatePostCode();
+        String firstName = createFirstNameFromPostCode(postCode);
+        String lastName = generateLastName();
 
         addCustomer
                 .checkVisibilityForm()
                 .setValuePostCode(postCode)
-                .setValueFirstName(postCode);
+                .setValueFirstName(firstName)
+                .setValueLastName(lastName)
+                .submitAddCustomer();
+
+        CustomersPage customers = bankManager.openCustomersPage();
+        customers.checkVisibilityCustomersTable()
+                .findCustomer(firstName, lastName, postCode);
     }
 
     //TODO:Возможно стоит проверить была ли сортировка сделана в других столбцах правильно
@@ -90,7 +97,7 @@ public class BaseTest {
 
         customers.checkVisibilityCustomersTable();
 
-        CustomersPage.CustomerForDeletion customer = customers.getClientForDeletion();
+        CustomersPage.Customer customer = customers.getClientForDeletion();
 
         customers.deleteCustomer(customer.index)
                 .checkVisibilityCustomersTable();

@@ -9,7 +9,6 @@ import static com.codeborne.selenide.Selenide.page;
 public class BankManagerPage {
     @FindBy(xpath = "//button[@ng-class='btnClass1']")
     private SelenideElement addCustomerButton;
-
     @FindBy(xpath = "//button[@ng-class='btnClass3']")
     private SelenideElement customersButton;
 
