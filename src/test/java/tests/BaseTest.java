@@ -18,8 +18,7 @@ import java.util.List;
 
 import static com.codeborne.selenide.Selenide.*;
 import static helpers.GeneratedData.*;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.*;
 
 @Epic("Управление клиентами")
 public class BaseTest {
@@ -31,6 +30,7 @@ public class BaseTest {
         Configuration.browser = "chrome";
         Configuration.browserSize = "maximized";
         Configuration.downloadsFolder = "target/downloads";
+        Configuration.headless = true;
         open(Configuration.baseUrl);
     }
 
@@ -59,8 +59,13 @@ public class BaseTest {
                 .submitAddCustomer();
 
         CustomersPage customers = bankManager.openCustomersPage();
-        customers.checkVisibilityCustomersTable()
-                .findCustomer(firstName, lastName, postCode);
+        customers.checkVisibilityCustomersTable();
+
+        assertTrue(customers.findCustomer(firstName, lastName, postCode),
+                "Клиент с данными: FirstName=" + firstName +
+                        ", LastName=" + lastName +
+                        ", PostCode=" + postCode +
+                        " не найден в таблице!");
     }
 
     //TODO:Возможно стоит проверить была ли сортировка сделана в других столбцах правильно

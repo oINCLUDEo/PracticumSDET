@@ -140,16 +140,10 @@ public class CustomersPage {
     }
 
     @Step("Поиск нужного Customer")
-    public CustomersPage findCustomer(String firstName, String lastName, String postCode) {
-        boolean customerFound = customersTableRows.stream()
+    public boolean findCustomer(String firstName, String lastName, String postCode) {
+        return customersTableRows.stream()
                 .anyMatch(row -> row.$("td:nth-child(1)").getText().equals(firstName) &&
                         row.$("td:nth-child(2)").getText().equals(lastName) &&
                         row.$("td:nth-child(3)").getText().equals(postCode));
-
-        assertTrue(customerFound, "Клиент с данными: FirstName=" + firstName +
-                ", LastName=" + lastName +
-                ", PostCode=" + postCode +
-                " не найден в таблице!");
-        return this;
     }
 }
