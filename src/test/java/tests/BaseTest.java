@@ -5,14 +5,18 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.BasePage;
+import pages.AddCustomerPage;
+import pages.BankManagerPage;
+import pages.CustomersPage;
 
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.*;
 import static helpers.GeneratedData.*;
+import static org.testng.Assert.assertFalse;
 
 @Epic("Управление клиентами")
 public class BaseTest {
@@ -25,16 +29,23 @@ public class BaseTest {
         open(Configuration.baseUrl);
     }
 
+    @AfterClass
+    public void tearDown() {
+        closeWebDriver();
+    }
+
     //TODO: Нужно добавить отправку формы и создание Last Name
     @Test
     @Feature("Клиентская форма")
     @Story("Добавление нового Customer(а)")
     @Description("Тест на заполнение формы")
     public void formSubmissionTest() {
-        BasePage basePage = page(BasePage.class);
+        BankManagerPage bankManager = page(BankManagerPage.class);
+        AddCustomerPage addCustomer = bankManager.openAddCustomerPage();
+
         String postCode = generatePostCode();
 
-        basePage.clickAddCustomerButton()
+        addCustomer
                 .checkVisibilityForm()
                 .setValuePostCode(postCode)
                 .setValueFirstName(postCode);
@@ -45,9 +56,10 @@ public class BaseTest {
     @Story("Сортировка таблицы Customers")
     @Description("Тест сортировки клиентов по First Name")
     public void sortClientsTest() {
-        BasePage basePage = page(BasePage.class);
+        BankManagerPage bankManager = page(BankManagerPage.class);
+        CustomersPage customers = bankManager.openCustomersPage();
 
-        basePage.clickCustomers()
+        customers
                 .checkVisibilityCustomersTable()
                 .clickFirstNameSortButton(true);
     }
@@ -57,19 +69,19 @@ public class BaseTest {
     @Story("Удаление Customer из таблицы Customers")
     @Description("Тест на удаление Customer из таблицы Customers на основе длины имени по отношению к ср.арифм всех имен")
     public void deleteCustomerFromTableTest() {
-        BasePage basePage = page(BasePage.class);
+        BankManagerPage bankManager = page(BankManagerPage.class);
+        CustomersPage customers = bankManager.openCustomersPage();
 
-        basePage.clickCustomers()
+        customers.checkVisibilityCustomersTable();
+
+        List<String> firstNames = customers.getCustomersFirstNames();
+
+        CustomersPage.CustomerForDeletion customer = customers.getClientForDeletion();
+
+        customers.deleteCustomer(customer.index)
                 .checkVisibilityCustomersTable();
 
-        List<String> customersFirstNames = getCustomersFirstNames();
-        List<String> customersLastNames = getCustomersLastNames();
-        Integer customersCount = customersFirstNames.size();
-        CustomerForDeletion customerForDeletion = getClientForDeletion(customersFirstNames, customersLastNames);
-
-        basePage.deleteCustomerFromTable(customerForDeletion.index)
-                .checkVisibilityDeletedCustomer(customersCount,
-                        customerForDeletion.firstName,
-                        customerForDeletion.lastName );
+        assertFalse(customers.getCustomersFirstNames().contains(customer.firstName),
+                "Клиент всё ещё присутствует в списке, хотя должен был быть удалён!");
     }
 }
