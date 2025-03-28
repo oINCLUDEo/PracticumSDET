@@ -1,0 +1,62 @@
+{
+  "5e065b67ff5f99f1fdd4b7bc5887ff0b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "5613d101ca021e14",
+      "reportUrl" : "https://oINCLUDEo.github.io/PracticumSDET/58/#testresult/5613d101ca021e14",
+      "status" : "passed",
+      "time" : {
+        "start" : 1743124445010,
+        "stop" : 1743124447344,
+        "duration" : 2334
+      }
+    } ]
+  },
+  "5f04b0760e72f75bb19e7787a906c2e2" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "171ce47bcede0d9e",
+      "reportUrl" : "https://oINCLUDEo.github.io/PracticumSDET/58/#testresult/171ce47bcede0d9e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1743124445011,
+        "stop" : 1743124446455,
+        "duration" : 1444
+      }
+    } ]
+  },
+  "ab995e9a05af664bbb80be9bffae79a2" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "894bb5792af5da06",
+      "reportUrl" : "https://oINCLUDEo.github.io/PracticumSDET/58/#testresult/894bb5792af5da06",
+      "status" : "passed",
+      "time" : {
+        "start" : 1743124445010,
+        "stop" : 1743124446428,
+        "duration" : 1418
+      }
+    } ]
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "uid" : "171ce47bcede0d9e",
+  "name" : "sortClientsTest",
+  "fullName" : "tests.BaseTest.sortClientsTest",
+  "historyId" : "5f04b0760e72f75bb19e7787a906c2e2",
+  "time" : {
+    "start" : 1743124445011,
+    "stop" : 1743124446455,
+    "duration" : 1444
+  },
+  "description" : "Тест сортировки клиентов по First Name",
+  "descriptionHtml" : "<p>Тест сортировки клиентов по First Name</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1743124440461,
+      "stop" : 1743124444966,
+      "duration" : 4505
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "Тест сортировки клиентов по First Name",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Открытие страницы списка клиентов",
+      "time" : {
+        "start" : 1743124445256,
+        "stop" : 1743124445585,
+        "duration" : 329
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Проверка отображения таблицы клиентов",
+      "time" : {
+        "start" : 1743124445585,
+        "stop" : 1743124445881,
+        "duration" : 296
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Сортировка клиентов по имени",
+      "time" : {
+        "start" : 1743124445883,
+        "stop" : 1743124446328,
+        "duration" : 445
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Получение списка имен клиентов",
+        "time" : {
+          "start" : 1743124446191,
+          "stop" : 1743124446328,
+          "duration" : 137
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "ascending",
+        "value" : "true"
+      } ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Получение списка имен клиентов",
+      "time" : {
+        "start" : 1743124446328,
+        "stop" : 1743124446449,
+        "duration" : 121
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1743124446541,
+      "stop" : 1743124446648,
+      "duration" : 107
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests.BaseTest"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.BaseTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "sortClientsTest"
+  }, {
+    "name" : "parentSuite",
+    "value" : "BankingProject Test Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Sort Customers Table Test"
+  }, {
+    "name" : "subSuite",
+    "value" : "tests.BaseTest"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1718-224"
+  }, {
+    "name" : "thread",
+    "value" : "2012@fv-az1718-224.TestNG-tests-2(18)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "feature",
+    "value" : "Клиентская база"
+  }, {
+    "name" : "story",
+    "value" : "Сортировка таблицы Customers"
+  }, {
+    "name" : "epic",
+    "value" : "Управление клиентами"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "171ce47bcede0d9e.json",
+  "parameterValues" : [ ]
+}

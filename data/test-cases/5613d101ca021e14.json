@@ -1,0 +1,269 @@
+{
+  "uid" : "5613d101ca021e14",
+  "name" : "formSubmissionTest",
+  "fullName" : "tests.BaseTest.formSubmissionTest",
+  "historyId" : "5e065b67ff5f99f1fdd4b7bc5887ff0b",
+  "time" : {
+    "start" : 1743124445010,
+    "stop" : 1743124447344,
+    "duration" : 2334
+  },
+  "description" : "Тест на заполнение формы Customer",
+  "descriptionHtml" : "<p>Тест на заполнение формы Customer</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1743124440459,
+      "stop" : 1743124444966,
+      "duration" : 4507
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "Тест на заполнение формы Customer",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Открытие страницы добавления клиента",
+      "time" : {
+        "start" : 1743124445256,
+        "stop" : 1743124445568,
+        "duration" : 312
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Проверка отображения формы",
+      "time" : {
+        "start" : 1743124445640,
+        "stop" : 1743124445903,
+        "duration" : 263
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Ввод Post Code",
+      "time" : {
+        "start" : 1743124445903,
+        "stop" : 1743124446383,
+        "duration" : 480
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "postCode",
+        "value" : "5176359198"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Ввод First Name на основе Post Code",
+      "time" : {
+        "start" : 1743124446384,
+        "stop" : 1743124446517,
+        "duration" : 133
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "firstName",
+        "value" : "zyjnu"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Ввод Last Name",
+      "time" : {
+        "start" : 1743124446517,
+        "stop" : 1743124446682,
+        "duration" : 165
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "lastName",
+        "value" : "Qkag"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Отправка формы Add Customer",
+      "time" : {
+        "start" : 1743124446682,
+        "stop" : 1743124446895,
+        "duration" : 213
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Открытие страницы списка клиентов",
+      "time" : {
+        "start" : 1743124446895,
+        "stop" : 1743124446963,
+        "duration" : 68
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Проверка отображения таблицы клиентов",
+      "time" : {
+        "start" : 1743124446963,
+        "stop" : 1743124447194,
+        "duration" : 231
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Поиск нужного Customer",
+      "time" : {
+        "start" : 1743124447194,
+        "stop" : 1743124447344,
+        "duration" : 150
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "firstName",
+        "value" : "zyjnu"
+      }, {
+        "name" : "lastName",
+        "value" : "Qkag"
+      }, {
+        "name" : "postCode",
+        "value" : "5176359198"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 9,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1743124447346,
+      "stop" : 1743124447417,
+      "duration" : 71
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests.BaseTest"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.BaseTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "formSubmissionTest"
+  }, {
+    "name" : "parentSuite",
+    "value" : "BankingProject Test Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Add Customer Test"
+  }, {
+    "name" : "subSuite",
+    "value" : "tests.BaseTest"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1718-224"
+  }, {
+    "name" : "thread",
+    "value" : "2012@fv-az1718-224.TestNG-tests-1(17)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "feature",
+    "value" : "Клиентская форма"
+  }, {
+    "name" : "story",
+    "value" : "Добавление нового Customer(а)"
+  }, {
+    "name" : "epic",
+    "value" : "Управление клиентами"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "5613d101ca021e14.json",
+  "parameterValues" : [ ]
+}

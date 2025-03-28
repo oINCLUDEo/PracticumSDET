@@ -1,0 +1,68 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "children" : [ {
+    "name" : "Управление клиентами",
+    "children" : [ {
+      "name" : "Клиентская база",
+      "children" : [ {
+        "name" : "Удаление Customer из таблицы Customers",
+        "children" : [ {
+          "name" : "deleteCustomerFromTableTest",
+          "uid" : "894bb5792af5da06",
+          "parentUid" : "464246a1de04a80996f6169bbfe7e28b",
+          "status" : "passed",
+          "time" : {
+            "start" : 1743124445010,
+            "stop" : 1743124446428,
+            "duration" : 1418
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "464246a1de04a80996f6169bbfe7e28b"
+      }, {
+        "name" : "Сортировка таблицы Customers",
+        "children" : [ {
+          "name" : "sortClientsTest",
+          "uid" : "171ce47bcede0d9e",
+          "parentUid" : "a77881b8d2f2a7009fdf14c1fd74bb8c",
+          "status" : "passed",
+          "time" : {
+            "start" : 1743124445011,
+            "stop" : 1743124446455,
+            "duration" : 1444
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "a77881b8d2f2a7009fdf14c1fd74bb8c"
+      } ],
+      "uid" : "ea74e913fd4d1596e7695bda3c5e71a5"
+    }, {
+      "name" : "Клиентская форма",
+      "children" : [ {
+        "name" : "Добавление нового Customer(а)",
+        "children" : [ {
+          "name" : "formSubmissionTest",
+          "uid" : "5613d101ca021e14",
+          "parentUid" : "64dde9792de23082614d525f4443762a",
+          "status" : "passed",
+          "time" : {
+            "start" : 1743124445010,
+            "stop" : 1743124447344,
+            "duration" : 2334
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "64dde9792de23082614d525f4443762a"
+      } ],
+      "uid" : "38c76d7419bae372ec4f6d79ec1c7a5c"
+    } ],
+    "uid" : "93e21a8247208347a7bc5ee6a05888a6"
+  } ],
+  "name" : "behaviors"
+}

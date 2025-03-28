@@ -1,0 +1,31 @@
+[ {
+  "uid" : "894bb5792af5da06",
+  "name" : "deleteCustomerFromTableTest",
+  "time" : {
+    "start" : 1743124445010,
+    "stop" : 1743124446428,
+    "duration" : 1418
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5613d101ca021e14",
+  "name" : "formSubmissionTest",
+  "time" : {
+    "start" : 1743124445010,
+    "stop" : 1743124447344,
+    "duration" : 2334
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "171ce47bcede0d9e",
+  "name" : "sortClientsTest",
+  "time" : {
+    "start" : 1743124445011,
+    "stop" : 1743124446455,
+    "duration" : 1444
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
