@@ -22,6 +22,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '18'
+          distribution: 'temurin'
 
       - name: Cache Maven dependencies
         uses: actions/cache@v3
@@ -37,7 +38,34 @@ jobs:
         run: mvn clean test
 
       - name: Upload Allure Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: allure-report
+          name: allure-results
           path: target/allure-results
+
+  generate-report:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Download Allure results
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-results
+          path: target/allure-results
+
+      - name: Generate Allure report
+        uses: simple-elf/allure-report-action@v1
+        with:
+          allure_results: target/allure-results
+          allure_report: target/allure-report
+          gh_pages: gh-pages
+
+      - name: Deploy Allure report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: target/allure-report
