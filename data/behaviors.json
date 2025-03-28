@@ -5,39 +5,39 @@
     "children" : [ {
       "name" : "Клиентская база",
       "children" : [ {
-        "name" : "Удаление Customer из таблицы Customers",
-        "children" : [ {
-          "name" : "deleteCustomerFromTableTest",
-          "uid" : "894bb5792af5da06",
-          "parentUid" : "464246a1de04a80996f6169bbfe7e28b",
-          "status" : "passed",
-          "time" : {
-            "start" : 1743124445010,
-            "stop" : 1743124446428,
-            "duration" : 1418
-          },
-          "flaky" : false,
-          "newFailed" : false,
-          "parameters" : [ ]
-        } ],
-        "uid" : "464246a1de04a80996f6169bbfe7e28b"
-      }, {
         "name" : "Сортировка таблицы Customers",
         "children" : [ {
           "name" : "sortClientsTest",
-          "uid" : "171ce47bcede0d9e",
+          "uid" : "bd5f98897b6b15e4",
           "parentUid" : "a77881b8d2f2a7009fdf14c1fd74bb8c",
           "status" : "passed",
           "time" : {
-            "start" : 1743124445011,
-            "stop" : 1743124446455,
-            "duration" : 1444
+            "start" : 1743124686318,
+            "stop" : 1743124688264,
+            "duration" : 1946
           },
           "flaky" : false,
           "newFailed" : false,
           "parameters" : [ ]
         } ],
         "uid" : "a77881b8d2f2a7009fdf14c1fd74bb8c"
+      }, {
+        "name" : "Удаление Customer из таблицы Customers",
+        "children" : [ {
+          "name" : "deleteCustomerFromTableTest",
+          "uid" : "8d50ffc74efb2a72",
+          "parentUid" : "464246a1de04a80996f6169bbfe7e28b",
+          "status" : "passed",
+          "time" : {
+            "start" : 1743124686318,
+            "stop" : 1743124688226,
+            "duration" : 1908
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "464246a1de04a80996f6169bbfe7e28b"
       } ],
       "uid" : "ea74e913fd4d1596e7695bda3c5e71a5"
     }, {
@@ -46,13 +46,13 @@
         "name" : "Добавление нового Customer(а)",
         "children" : [ {
           "name" : "formSubmissionTest",
-          "uid" : "5613d101ca021e14",
+          "uid" : "ad3062d50c600965",
           "parentUid" : "64dde9792de23082614d525f4443762a",
           "status" : "passed",
           "time" : {
-            "start" : 1743124445010,
-            "stop" : 1743124447344,
-            "duration" : 2334
+            "start" : 1743124686318,
+            "stop" : 1743124689558,
+            "duration" : 3240
           },
           "flaky" : false,
           "newFailed" : false,

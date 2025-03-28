@@ -1,12 +1,12 @@
 {
-  "uid" : "5613d101ca021e14",
+  "uid" : "ad3062d50c600965",
   "name" : "formSubmissionTest",
   "fullName" : "tests.BaseTest.formSubmissionTest",
   "historyId" : "5e065b67ff5f99f1fdd4b7bc5887ff0b",
   "time" : {
-    "start" : 1743124445010,
-    "stop" : 1743124447344,
-    "duration" : 2334
+    "start" : 1743124686318,
+    "stop" : 1743124689558,
+    "duration" : 3240
   },
   "description" : "Тест на заполнение формы Customer",
   "descriptionHtml" : "<p>Тест на заполнение формы Customer</p>\n",
@@ -16,9 +16,9 @@
   "beforeStages" : [ {
     "name" : "setUp",
     "time" : {
-      "start" : 1743124440459,
-      "stop" : 1743124444966,
-      "duration" : 4507
+      "start" : 1743124645810,
+      "stop" : 1743124686280,
+      "duration" : 40470
     },
     "description" : "",
     "status" : "passed",
@@ -36,9 +36,9 @@
     "steps" : [ {
       "name" : "Открытие страницы добавления клиента",
       "time" : {
-        "start" : 1743124445256,
-        "stop" : 1743124445568,
-        "duration" : 312
+        "start" : 1743124686547,
+        "stop" : 1743124687428,
+        "duration" : 881
       },
       "status" : "passed",
       "steps" : [ ],
@@ -51,9 +51,9 @@
     }, {
       "name" : "Проверка отображения формы",
       "time" : {
-        "start" : 1743124445640,
-        "stop" : 1743124445903,
-        "duration" : 263
+        "start" : 1743124687512,
+        "stop" : 1743124687599,
+        "duration" : 87
       },
       "status" : "passed",
       "steps" : [ ],
@@ -66,16 +66,16 @@
     }, {
       "name" : "Ввод Post Code",
       "time" : {
-        "start" : 1743124445903,
-        "stop" : 1743124446383,
-        "duration" : 480
+        "start" : 1743124687601,
+        "stop" : 1743124688250,
+        "duration" : 649
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "postCode",
-        "value" : "5176359198"
+        "value" : "2736561653"
       } ],
       "stepsCount" : 0,
       "attachmentsCount" : 0,
@@ -84,16 +84,16 @@
     }, {
       "name" : "Ввод First Name на основе Post Code",
       "time" : {
-        "start" : 1743124446384,
-        "stop" : 1743124446517,
-        "duration" : 133
+        "start" : 1743124688250,
+        "stop" : 1743124688515,
+        "duration" : 265
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "firstName",
-        "value" : "zyjnu"
+        "value" : "bkeqb"
       } ],
       "stepsCount" : 0,
       "attachmentsCount" : 0,
@@ -102,16 +102,16 @@
     }, {
       "name" : "Ввод Last Name",
       "time" : {
-        "start" : 1743124446517,
-        "stop" : 1743124446682,
-        "duration" : 165
+        "start" : 1743124688515,
+        "stop" : 1743124688618,
+        "duration" : 103
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "lastName",
-        "value" : "Qkag"
+        "value" : "Lypzafyhrgr"
       } ],
       "stepsCount" : 0,
       "attachmentsCount" : 0,
@@ -120,9 +120,9 @@
     }, {
       "name" : "Отправка формы Add Customer",
       "time" : {
-        "start" : 1743124446682,
-        "stop" : 1743124446895,
-        "duration" : 213
+        "start" : 1743124688619,
+        "stop" : 1743124689090,
+        "duration" : 471
       },
       "status" : "passed",
       "steps" : [ ],
@@ -135,9 +135,9 @@
     }, {
       "name" : "Открытие страницы списка клиентов",
       "time" : {
-        "start" : 1743124446895,
-        "stop" : 1743124446963,
-        "duration" : 68
+        "start" : 1743124689090,
+        "stop" : 1743124689183,
+        "duration" : 93
       },
       "status" : "passed",
       "steps" : [ ],
@@ -150,9 +150,9 @@
     }, {
       "name" : "Проверка отображения таблицы клиентов",
       "time" : {
-        "start" : 1743124446963,
-        "stop" : 1743124447194,
-        "duration" : 231
+        "start" : 1743124689183,
+        "stop" : 1743124689413,
+        "duration" : 230
       },
       "status" : "passed",
       "steps" : [ ],
@@ -165,22 +165,22 @@
     }, {
       "name" : "Поиск нужного Customer",
       "time" : {
-        "start" : 1743124447194,
-        "stop" : 1743124447344,
-        "duration" : 150
+        "start" : 1743124689414,
+        "stop" : 1743124689558,
+        "duration" : 144
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ {
         "name" : "firstName",
-        "value" : "zyjnu"
+        "value" : "bkeqb"
       }, {
         "name" : "lastName",
-        "value" : "Qkag"
+        "value" : "Lypzafyhrgr"
       }, {
         "name" : "postCode",
-        "value" : "5176359198"
+        "value" : "2736561653"
       } ],
       "stepsCount" : 0,
       "attachmentsCount" : 0,
@@ -197,9 +197,9 @@
   "afterStages" : [ {
     "name" : "tearDown",
     "time" : {
-      "start" : 1743124447346,
-      "stop" : 1743124447417,
-      "duration" : 71
+      "start" : 1743124689560,
+      "stop" : 1743124689630,
+      "duration" : 70
     },
     "description" : "",
     "status" : "passed",
@@ -231,10 +231,10 @@
     "value" : "tests.BaseTest"
   }, {
     "name" : "host",
-    "value" : "fv-az1718-224"
+    "value" : "fv-az1074-472"
   }, {
     "name" : "thread",
-    "value" : "2012@fv-az1718-224.TestNG-tests-1(17)"
+    "value" : "2025@fv-az1074-472.TestNG-tests-1(17)"
   }, {
     "name" : "framework",
     "value" : "testng"
@@ -264,6 +264,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "5613d101ca021e14.json",
+  "source" : "ad3062d50c600965.json",
   "parameterValues" : [ ]
 }

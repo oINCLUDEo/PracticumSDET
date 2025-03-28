@@ -1,12 +1,12 @@
 {
-  "uid" : "894bb5792af5da06",
+  "uid" : "8d50ffc74efb2a72",
   "name" : "deleteCustomerFromTableTest",
   "fullName" : "tests.BaseTest.deleteCustomerFromTableTest",
   "historyId" : "ab995e9a05af664bbb80be9bffae79a2",
   "time" : {
-    "start" : 1743124445010,
-    "stop" : 1743124446428,
-    "duration" : 1418
+    "start" : 1743124686318,
+    "stop" : 1743124688226,
+    "duration" : 1908
   },
   "description" : "Тест на удаление Customer из таблицы Customers. Выбор Customer основан на выборе имени по ближайшей его длине к ср.арифм из всех имен в таблице",
   "descriptionHtml" : "<p>Тест на удаление Customer из таблицы Customers. Выбор Customer основан на выборе имени по ближайшей его длине к ср.арифм из всех имен в таблице</p>\n",
@@ -16,9 +16,9 @@
   "beforeStages" : [ {
     "name" : "setUp",
     "time" : {
-      "start" : 1743124440461,
-      "stop" : 1743124444968,
-      "duration" : 4507
+      "start" : 1743124645810,
+      "stop" : 1743124686275,
+      "duration" : 40465
     },
     "description" : "",
     "status" : "passed",
@@ -36,9 +36,9 @@
     "steps" : [ {
       "name" : "Открытие страницы списка клиентов",
       "time" : {
-        "start" : 1743124445256,
-        "stop" : 1743124445584,
-        "duration" : 328
+        "start" : 1743124686550,
+        "stop" : 1743124687440,
+        "duration" : 890
       },
       "status" : "passed",
       "steps" : [ ],
@@ -51,9 +51,9 @@
     }, {
       "name" : "Проверка отображения таблицы клиентов",
       "time" : {
-        "start" : 1743124445584,
-        "stop" : 1743124445879,
-        "duration" : 295
+        "start" : 1743124687440,
+        "stop" : 1743124687705,
+        "duration" : 265
       },
       "status" : "passed",
       "steps" : [ ],
@@ -66,17 +66,17 @@
     }, {
       "name" : "Получение клиента для удаления",
       "time" : {
-        "start" : 1743124445880,
-        "stop" : 1743124446225,
-        "duration" : 345
+        "start" : 1743124687705,
+        "stop" : 1743124688009,
+        "duration" : 304
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Получение списка имен клиентов",
         "time" : {
-          "start" : 1743124445880,
-          "stop" : 1743124446073,
-          "duration" : 193
+          "start" : 1743124687705,
+          "stop" : 1743124687889,
+          "duration" : 184
         },
         "status" : "passed",
         "steps" : [ ],
@@ -89,9 +89,9 @@
       }, {
         "name" : "Получение списка фамилий клиентов",
         "time" : {
-          "start" : 1743124446073,
-          "stop" : 1743124446223,
-          "duration" : 150
+          "start" : 1743124687889,
+          "stop" : 1743124688008,
+          "duration" : 119
         },
         "status" : "passed",
         "steps" : [ ],
@@ -111,9 +111,9 @@
     }, {
       "name" : "Удаление клиента",
       "time" : {
-        "start" : 1743124446225,
-        "stop" : 1743124446314,
-        "duration" : 89
+        "start" : 1743124688010,
+        "stop" : 1743124688097,
+        "duration" : 87
       },
       "status" : "passed",
       "steps" : [ ],
@@ -129,8 +129,8 @@
     }, {
       "name" : "Проверка отображения таблицы клиентов",
       "time" : {
-        "start" : 1743124446314,
-        "stop" : 1743124446328,
+        "start" : 1743124688097,
+        "stop" : 1743124688111,
         "duration" : 14
       },
       "status" : "passed",
@@ -144,9 +144,9 @@
     }, {
       "name" : "Получение списка имен клиентов",
       "time" : {
-        "start" : 1743124446328,
-        "stop" : 1743124446423,
-        "duration" : 95
+        "start" : 1743124688111,
+        "stop" : 1743124688218,
+        "duration" : 107
       },
       "status" : "passed",
       "steps" : [ ],
@@ -167,9 +167,9 @@
   "afterStages" : [ {
     "name" : "tearDown",
     "time" : {
-      "start" : 1743124446543,
-      "stop" : 1743124446648,
-      "duration" : 105
+      "start" : 1743124688306,
+      "stop" : 1743124688463,
+      "duration" : 157
     },
     "description" : "",
     "status" : "passed",
@@ -201,10 +201,10 @@
     "value" : "tests.BaseTest"
   }, {
     "name" : "host",
-    "value" : "fv-az1718-224"
+    "value" : "fv-az1074-472"
   }, {
     "name" : "thread",
-    "value" : "2012@fv-az1718-224.TestNG-tests-3(19)"
+    "value" : "2025@fv-az1074-472.TestNG-tests-3(19)"
   }, {
     "name" : "framework",
     "value" : "testng"
@@ -234,6 +234,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "894bb5792af5da06.json",
+  "source" : "8d50ffc74efb2a72.json",
   "parameterValues" : [ ]
 }
