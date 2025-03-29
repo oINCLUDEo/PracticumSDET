@@ -3,38 +3,38 @@
   "children" : [ {
     "name" : "BankingProject Test Suite",
     "children" : [ {
-      "name" : "Deletion Customer From Customers Table Test",
+      "name" : "Sort Customers Table Test",
       "children" : [ {
         "name" : "tests.BaseTest",
         "children" : [ {
-          "name" : "deleteCustomerFromTableTest",
-          "uid" : "edf234c69550e634",
-          "parentUid" : "d0b9450e368e8f51d84d42f9b9e76f6b",
+          "name" : "sortClientsTest",
+          "uid" : "673d87eb72ba8db5",
+          "parentUid" : "3fcf864938dc43282f3dae1dbd54387c",
           "status" : "passed",
           "time" : {
-            "start" : 1743258434292,
-            "stop" : 1743258435642,
-            "duration" : 1350
+            "start" : 1743258704206,
+            "stop" : 1743258705603,
+            "duration" : 1397
           },
           "flaky" : false,
           "newFailed" : false,
           "parameters" : [ ]
         } ],
-        "uid" : "d0b9450e368e8f51d84d42f9b9e76f6b"
+        "uid" : "3fcf864938dc43282f3dae1dbd54387c"
       } ],
-      "uid" : "a0e98d84c81b9b1329b3921d20c37c12"
+      "uid" : "13ac96a5dfc091aaab6f0251fe6d944f"
     }, {
       "name" : "Add Customer Test",
       "children" : [ {
         "name" : "tests.BaseTest",
         "children" : [ {
           "name" : "addCustomerTest",
-          "uid" : "c53383c1c7e60fdc",
+          "uid" : "aa96166ff9aea4d7",
           "parentUid" : "6310b74d48fda5c5f85e269e0785e96c",
           "status" : "passed",
           "time" : {
-            "start" : 1743258434292,
-            "stop" : 1743258436047,
+            "start" : 1743258704207,
+            "stop" : 1743258705962,
             "duration" : 1755
           },
           "flaky" : false,
@@ -45,26 +45,26 @@
       } ],
       "uid" : "b90b82cb46df8a76800ec92796b35e01"
     }, {
-      "name" : "Sort Customers Table Test",
+      "name" : "Deletion Customer From Customers Table Test",
       "children" : [ {
         "name" : "tests.BaseTest",
         "children" : [ {
-          "name" : "sortClientsTest",
-          "uid" : "9e1f79e425ae462a",
-          "parentUid" : "3fcf864938dc43282f3dae1dbd54387c",
+          "name" : "deleteCustomerFromTableTest",
+          "uid" : "8b846559269203d",
+          "parentUid" : "d0b9450e368e8f51d84d42f9b9e76f6b",
           "status" : "passed",
           "time" : {
-            "start" : 1743258434292,
-            "stop" : 1743258435642,
-            "duration" : 1350
+            "start" : 1743258704207,
+            "stop" : 1743258705577,
+            "duration" : 1370
           },
           "flaky" : false,
           "newFailed" : false,
           "parameters" : [ ]
         } ],
-        "uid" : "3fcf864938dc43282f3dae1dbd54387c"
+        "uid" : "d0b9450e368e8f51d84d42f9b9e76f6b"
       } ],
-      "uid" : "13ac96a5dfc091aaab6f0251fe6d944f"
+      "uid" : "a0e98d84c81b9b1329b3921d20c37c12"
     } ],
     "uid" : "7748723705a93cee3e56f96cd24eb679"
   } ],

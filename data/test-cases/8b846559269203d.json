@@ -1,24 +1,24 @@
 {
-  "uid" : "9e1f79e425ae462a",
-  "name" : "sortClientsTest",
-  "fullName" : "tests.BaseTest.sortClientsTest",
-  "historyId" : "5f04b0760e72f75bb19e7787a906c2e2",
+  "uid" : "8b846559269203d",
+  "name" : "deleteCustomerFromTableTest",
+  "fullName" : "tests.BaseTest.deleteCustomerFromTableTest",
+  "historyId" : "ab995e9a05af664bbb80be9bffae79a2",
   "time" : {
-    "start" : 1743258434292,
-    "stop" : 1743258435642,
-    "duration" : 1350
+    "start" : 1743258704207,
+    "stop" : 1743258705577,
+    "duration" : 1370
   },
-  "description" : "Тест сортировки клиентов по First Name",
-  "descriptionHtml" : "<p>Тест сортировки клиентов по First Name</p>\n",
+  "description" : "Тест на удаление Customer из таблицы Customers. Выбор Customer основан на выборе имени по ближайшей его длине к ср.арифм из всех имен в таблице",
+  "descriptionHtml" : "<p>Тест на удаление Customer из таблицы Customers. Выбор Customer основан на выборе имени по ближайшей его длине к ср.арифм из всех имен в таблице</p>\n",
   "status" : "passed",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ {
     "name" : "setUp",
     "time" : {
-      "start" : 1743258431655,
-      "stop" : 1743258434257,
-      "duration" : 2602
+      "start" : 1743258701613,
+      "stop" : 1743258704170,
+      "duration" : 2557
     },
     "description" : "",
     "status" : "passed",
@@ -31,14 +31,14 @@
     "hasContent" : false
   } ],
   "testStage" : {
-    "description" : "Тест сортировки клиентов по First Name",
+    "description" : "Тест на удаление Customer из таблицы Customers. Выбор Customer основан на выборе имени по ближайшей его длине к ср.арифм из всех имен в таблице",
     "status" : "passed",
     "steps" : [ {
       "name" : "Открытие страницы списка Customers",
       "time" : {
-        "start" : 1743258434527,
-        "stop" : 1743258434810,
-        "duration" : 283
+        "start" : 1743258704468,
+        "stop" : 1743258704749,
+        "duration" : 281
       },
       "status" : "passed",
       "steps" : [ ],
@@ -51,9 +51,9 @@
     }, {
       "name" : "Проверка отображения таблицы Customers",
       "time" : {
-        "start" : 1743258434810,
-        "stop" : 1743258435082,
-        "duration" : 272
+        "start" : 1743258704749,
+        "stop" : 1743258705010,
+        "duration" : 261
       },
       "status" : "passed",
       "steps" : [ ],
@@ -64,19 +64,34 @@
       "shouldDisplayMessage" : false,
       "hasContent" : false
     }, {
-      "name" : "Сортировка таблицы Customers по First Name",
+      "name" : "Получение Customer для удаления",
       "time" : {
-        "start" : 1743258435083,
-        "stop" : 1743258435506,
-        "duration" : 423
+        "start" : 1743258705011,
+        "stop" : 1743258705341,
+        "duration" : 330
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "Получение списка имен Customers",
         "time" : {
-          "start" : 1743258435355,
-          "stop" : 1743258435506,
-          "duration" : 151
+          "start" : 1743258705011,
+          "stop" : 1743258705205,
+          "duration" : 194
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Получение списка фамилий Customers",
+        "time" : {
+          "start" : 1743258705205,
+          "stop" : 1743258705339,
+          "duration" : 134
         },
         "status" : "passed",
         "steps" : [ ],
@@ -88,20 +103,50 @@
         "hasContent" : false
       } ],
       "attachments" : [ ],
-      "parameters" : [ {
-        "name" : "ascending",
-        "value" : "true"
-      } ],
-      "stepsCount" : 1,
+      "parameters" : [ ],
+      "stepsCount" : 2,
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
       "hasContent" : true
     }, {
+      "name" : "Удаление Customer",
+      "time" : {
+        "start" : 1743258705342,
+        "stop" : 1743258705440,
+        "duration" : 98
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "index",
+        "value" : "1"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Проверка отображения таблицы Customers",
+      "time" : {
+        "start" : 1743258705441,
+        "stop" : 1743258705460,
+        "duration" : 19
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
       "name" : "Получение списка имен Customers",
       "time" : {
-        "start" : 1743258435507,
-        "stop" : 1743258435632,
-        "duration" : 125
+        "start" : 1743258705461,
+        "stop" : 1743258705571,
+        "duration" : 110
       },
       "status" : "passed",
       "steps" : [ ],
@@ -114,7 +159,7 @@
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 5,
+    "stepsCount" : 8,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -122,9 +167,9 @@
   "afterStages" : [ {
     "name" : "tearDown",
     "time" : {
-      "start" : 1743258435727,
-      "stop" : 1743258435843,
-      "duration" : 116
+      "start" : 1743258705665,
+      "stop" : 1743258705754,
+      "duration" : 89
     },
     "description" : "",
     "status" : "passed",
@@ -144,22 +189,22 @@
     "value" : "tests.BaseTest"
   }, {
     "name" : "testMethod",
-    "value" : "sortClientsTest"
+    "value" : "deleteCustomerFromTableTest"
   }, {
     "name" : "parentSuite",
     "value" : "BankingProject Test Suite"
   }, {
     "name" : "suite",
-    "value" : "Sort Customers Table Test"
+    "value" : "Deletion Customer From Customers Table Test"
   }, {
     "name" : "subSuite",
     "value" : "tests.BaseTest"
   }, {
     "name" : "host",
-    "value" : "fv-az1068-918"
+    "value" : "fv-az1369-352"
   }, {
     "name" : "thread",
-    "value" : "2034@fv-az1068-918.TestNG-tests-2(18)"
+    "value" : "2114@fv-az1369-352.TestNG-tests-3(19)"
   }, {
     "name" : "framework",
     "value" : "testng"
@@ -171,7 +216,7 @@
     "value" : "Клиентская база"
   }, {
     "name" : "story",
-    "value" : "Сортировка таблицы Customers"
+    "value" : "Удаление Customer из таблицы Customers"
   }, {
     "name" : "epic",
     "value" : "Управление клиентами"
@@ -189,6 +234,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "9e1f79e425ae462a.json",
+  "source" : "8b846559269203d.json",
   "parameterValues" : [ ]
 }

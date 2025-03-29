@@ -9,12 +9,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "c53383c1c7e60fdc",
-      "reportUrl" : "https://oINCLUDEo.github.io/PracticumSDET/60/#testresult/c53383c1c7e60fdc",
+      "uid" : "aa96166ff9aea4d7",
+      "reportUrl" : "https://oINCLUDEo.github.io/PracticumSDET/61/#testresult/aa96166ff9aea4d7",
       "status" : "passed",
       "time" : {
-        "start" : 1743258434292,
-        "stop" : 1743258436047,
+        "start" : 1743258704207,
+        "stop" : 1743258705962,
         "duration" : 1755
       }
     } ]
@@ -29,13 +29,13 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "9e1f79e425ae462a",
-      "reportUrl" : "https://oINCLUDEo.github.io/PracticumSDET/60/#testresult/9e1f79e425ae462a",
+      "uid" : "673d87eb72ba8db5",
+      "reportUrl" : "https://oINCLUDEo.github.io/PracticumSDET/61/#testresult/673d87eb72ba8db5",
       "status" : "passed",
       "time" : {
-        "start" : 1743258434292,
-        "stop" : 1743258435642,
-        "duration" : 1350
+        "start" : 1743258704206,
+        "stop" : 1743258705603,
+        "duration" : 1397
       }
     } ]
   },
@@ -49,13 +49,13 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "edf234c69550e634",
-      "reportUrl" : "https://oINCLUDEo.github.io/PracticumSDET/60/#testresult/edf234c69550e634",
+      "uid" : "8b846559269203d",
+      "reportUrl" : "https://oINCLUDEo.github.io/PracticumSDET/61/#testresult/8b846559269203d",
       "status" : "passed",
       "time" : {
-        "start" : 1743258434292,
-        "stop" : 1743258435642,
-        "duration" : 1350
+        "start" : 1743258704207,
+        "stop" : 1743258705577,
+        "duration" : 1370
       }
     } ]
   }
