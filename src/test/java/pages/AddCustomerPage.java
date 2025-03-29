@@ -1,16 +1,16 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import helpers.GeneratedData;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static com.codeborne.selenide.Condition.visible;
-import static helpers.GeneratedData.createFirstNameFromPostCode;
 
 public class AddCustomerPage {
+    private static final Logger LOG = LoggerFactory.getLogger(AddCustomerPage.class);
+
     @FindBy(name = "myForm")
     private SelenideElement addCustomerForm;
     @FindBy(css = "input[placeholder='Post Code']")
@@ -31,24 +31,32 @@ public class AddCustomerPage {
     @Step("Ввод Post Code")
     public AddCustomerPage setValuePostCode(String postCode) {
         postCodeInput.setValue(postCode);
+
+        LOG.info("Введен Post Code: {}", postCode);
         return this;
     }
 
     @Step("Ввод First Name на основе Post Code")
     public AddCustomerPage setValueFirstName(String firstName) {
         firstNameInput.setValue(firstName);
+
+        LOG.info("Введен First Name: {}", firstName);
         return this;
     }
 
     @Step("Ввод Last Name")
     public AddCustomerPage setValueLastName(String lastName) {
         lastNameInput.setValue(lastName);
+
+        LOG.info("Введен Last Name: {}", lastName);
         return this;
     }
 
     @Step("Отправка формы Add Customer")
     public AddCustomerPage submitAddCustomer() {
         addCustomerButton.click();
+
+        LOG.info("Отправлена форма Add Customer");
         return this;
     }
 }

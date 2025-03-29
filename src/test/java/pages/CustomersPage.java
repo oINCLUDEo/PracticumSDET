@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,7 +17,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static org.testng.Assert.assertTrue;
 
 public class CustomersPage {
-    private static Logger log = LoggerFactory.getLogger(CustomersPage.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CustomersPage.class);
 
     @FindBy(tagName = "table")
     private SelenideElement customersTable;
@@ -55,27 +54,32 @@ public class CustomersPage {
         }
     }
 
-    @Step("Проверка отображения таблицы клиентов")
+    @Step("Проверка отображения таблицы Customers")
     public CustomersPage checkVisibilityCustomersTable() {
         customersTable.shouldBe(visible);
         return this;
     }
 
-    @Step("Получение списка имен клиентов")
+    @Step("Получение списка имен Customers")
     public List<String> getCustomersFirstNames() {
-        return customersTableRows.stream()
+        List<String> firstNames = customersTableRows.stream()
                 .map(row -> row.$("td:nth-child(1)").getText())
                 .collect(Collectors.toList());
+
+        return firstNames;
     }
 
-    @Step("Получение списка фамилий клиентов")
+    @Step("Получение списка фамилий Customers")
     public List<String> getCustomersLastNames() {
-        return customersTableRows.stream()
+        List<String> lastNames = customersTableRows.stream()
                 .map(row -> row.$("td:nth-child(2)").getText())
                 .collect(Collectors.toList());
+
+        LOG.info("Получили список Last Names Customers: {}", lastNames);
+        return lastNames;
     }
 
-    @Step("Сортировка клиентов по имени")
+    @Step("Сортировка таблицы Customers по First Name")
     public CustomersPage clickFirstNameSortButton(boolean ascending) {
         firstNameSortButton.shouldBe(visible, Duration.ofSeconds(3));
 
@@ -87,25 +91,19 @@ public class CustomersPage {
             attempts++;
         }
 
-        List<String> names = getCustomersFirstNames();
-        List<String> sortedNames = new ArrayList<>(names);
-        sortedNames.sort(ascending ? Comparator.naturalOrder() : Comparator.reverseOrder());
-
-        if (!names.equals(sortedNames)) {
-            throw new AssertionError("Ошибка сортировки. Ожидалось: " +
-                    sortedNames + ", получено: " + names);
-        }
-
+        LOG.info("Сортировка таблицы Customer по First Name");
+        List<String> firstNames = getCustomersFirstNames();
+        LOG.info("Полученный список после сортировки: {}", firstNames);
         return this;
     }
 
-    @Step("Получение клиента для удаления")
+    @Step("Получение Customer для удаления")
     public Customer getClientForDeletion() {
         List<String> customersFirstNames = getCustomersFirstNames();
         List<String> customersLastNames = getCustomersLastNames();
 
         if (customersFirstNames == null || customersFirstNames.isEmpty()) {
-            throw new IllegalStateException("Список клиентов пуст. Невозможно определить клиента для удаления.");
+            throw new IllegalStateException("Список Customers пуст. Невозможно определить клиента для удаления.");
         }
 
         double averageLength = customersFirstNames.stream()
@@ -113,7 +111,7 @@ public class CustomersPage {
                 .average()
                 .orElse(0.0);
 
-        int closestFirstNameIndex = 0;
+        List<Integer> closestIndices = new ArrayList<>();
         double smallestDiff = Double.MAX_VALUE;
 
         for (int i = 0; i < customersFirstNames.size(); i++) {
@@ -122,20 +120,33 @@ public class CustomersPage {
 
             if (diff < smallestDiff) {
                 smallestDiff = diff;
-                closestFirstNameIndex = i;
+                closestIndices.clear();
+                closestIndices.add(i);
+            } else if (diff == smallestDiff) {
+                closestIndices.add(i);
             }
         }
 
-        String selectedFirstName = customersFirstNames.get(closestFirstNameIndex);
-        String selectedLastName = customersLastNames.get(closestFirstNameIndex);
+        if (closestIndices.size() > 1) {
+            LOG.warn("Найдено {} Customers с одинаковым отклонением от среднего:", closestIndices.size());
+            for (int index : closestIndices) {
+                LOG.warn(" - [{}] {} {}", index, customersFirstNames.get(index), customersLastNames.get(index));
+            }
+        }
 
-        log.info("Выбран клиент для удаления: [{}] {} {}", closestFirstNameIndex, selectedFirstName, selectedLastName);
-        return new Customer(closestFirstNameIndex, selectedFirstName, selectedLastName);
+        int selectedIndex = closestIndices.get(0);
+        String selectedFirstName = customersFirstNames.get(selectedIndex);
+        String selectedLastName = customersLastNames.get(selectedIndex);
+
+        LOG.info("Выбран Customer для удаления: [{}] {} {}", selectedIndex, selectedFirstName, selectedLastName);
+        return new Customer(selectedIndex, selectedFirstName, selectedLastName);
     }
 
-    @Step("Удаление клиента")
+    @Step("Удаление Customer")
     public CustomersPage deleteCustomer(int index) {
         customersTableRows.get(index).$("button").click();
+
+        LOG.info("Удален Customer с индексом: [{}]", index);
         return this;
     }
 

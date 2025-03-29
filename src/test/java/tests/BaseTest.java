@@ -5,6 +5,8 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -22,7 +24,9 @@ import static org.testng.Assert.*;
 
 @Epic("Управление клиентами")
 public class BaseTest {
-    private boolean isAscendingSort = true;
+    private final boolean isAscendingSort = true;
+    private static final Logger LOG = LoggerFactory.getLogger(BaseTest.class);
+
 
     @BeforeClass
     public void setUp() {
@@ -43,7 +47,7 @@ public class BaseTest {
     @Feature("Клиентская форма")
     @Story("Добавление нового Customer(а)")
     @Description("Тест на заполнение формы Customer")
-    public void formSubmissionTest() {
+    public void addCustomerTest() {
         BankManagerPage bankManager = page(BankManagerPage.class);
         AddCustomerPage addCustomer = bankManager.openAddCustomerPage();
 
@@ -68,7 +72,6 @@ public class BaseTest {
                         " не найден в таблице!");
     }
 
-    //TODO:Возможно стоит проверить была ли сортировка сделана в других столбцах правильно
     @Test
     @Feature("Клиентская база")
     @Story("Сортировка таблицы Customers")
@@ -88,6 +91,7 @@ public class BaseTest {
         if (!isAscendingSort) {
             Collections.reverse(expectedSortedNames);
         }
+        LOG.info("Ожидаемый список после сортировки: {}", expectedSortedNames);
         assertEquals(sortedNames, expectedSortedNames, "Сортировка First Name не работает!");
     }
 
@@ -104,8 +108,12 @@ public class BaseTest {
 
         CustomersPage.Customer customer = customers.getClientForDeletion();
 
-        customers.deleteCustomer(customer.index)
-                .checkVisibilityCustomersTable();
+        if (customer.index != null) {
+            customers.deleteCustomer(customer.index)
+                    .checkVisibilityCustomersTable();
+        } else {
+            LOG.warn("Попытка удалить клиента с Null индексом!");
+        }
 
         assertFalse(customers.getCustomersFirstNames().contains(customer.firstName),
                 "Клиент всё ещё присутствует в списке, хотя должен был быть удалён!");

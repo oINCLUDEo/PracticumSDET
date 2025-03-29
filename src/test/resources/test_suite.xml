@@ -4,7 +4,7 @@
         <classes>
             <class name="tests.BaseTest">
                 <methods>
-                    <include name="formSubmissionTest"/>
+                    <include name="addCustomerTest"/>
                 </methods>
             </class>
         </classes>
