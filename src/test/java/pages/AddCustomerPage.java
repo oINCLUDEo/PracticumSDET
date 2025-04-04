@@ -31,7 +31,6 @@ public class AddCustomerPage {
     @Step("Ввод Post Code")
     public AddCustomerPage setValuePostCode(String postCode) {
         postCodeInput.setValue(postCode);
-
         LOG.info("Введен Post Code: {}", postCode);
         return this;
     }
@@ -39,7 +38,6 @@ public class AddCustomerPage {
     @Step("Ввод First Name на основе Post Code")
     public AddCustomerPage setValueFirstName(String firstName) {
         firstNameInput.setValue(firstName);
-
         LOG.info("Введен First Name: {}", firstName);
         return this;
     }
@@ -47,7 +45,6 @@ public class AddCustomerPage {
     @Step("Ввод Last Name")
     public AddCustomerPage setValueLastName(String lastName) {
         lastNameInput.setValue(lastName);
-
         LOG.info("Введен Last Name: {}", lastName);
         return this;
     }
@@ -55,9 +52,7 @@ public class AddCustomerPage {
     @Step("Отправка формы Add Customer")
     public AddCustomerPage submitAddCustomer() {
         addCustomerButton.click();
-
         LOG.info("Отправлена форма Add Customer");
         return this;
     }
 }
-

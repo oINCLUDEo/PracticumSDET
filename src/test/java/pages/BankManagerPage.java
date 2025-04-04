@@ -20,7 +20,6 @@ public class BankManagerPage {
     @Step("Открытие страницы добавления Customer")
     public AddCustomerPage openAddCustomerPage() {
         addCustomerButton.shouldBe(visible).click();
-
         LOG.info("Открытие формы Add Customer");
         return page(AddCustomerPage.class);
     }
@@ -28,9 +27,7 @@ public class BankManagerPage {
     @Step("Открытие страницы списка Customers")
     public CustomersPage openCustomersPage() {
         customersButton.shouldBe(visible).click();
-
         LOG.info("Открытие Customers таблицы");
         return page(CustomersPage.class);
     }
-
 }

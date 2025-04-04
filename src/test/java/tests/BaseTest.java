@@ -27,7 +27,6 @@ public class BaseTest {
     private final boolean isAscendingSort = true;
     private static final Logger LOG = LoggerFactory.getLogger(BaseTest.class);
 
-
     @BeforeClass
     public void setUp() {
         Configuration.baseUrl = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager";
@@ -50,13 +49,11 @@ public class BaseTest {
     public void addCustomerTest() {
         BankManagerPage bankManager = page(BankManagerPage.class);
         AddCustomerPage addCustomer = bankManager.openAddCustomerPage();
-
         String postCode = generatePostCode();
         String firstName = createFirstNameFromPostCode(postCode);
         String lastName = generateLastName();
 
-        addCustomer
-                .checkVisibilityForm()
+        addCustomer.checkVisibilityForm()
                 .setValuePostCode(postCode)
                 .setValueFirstName(firstName)
                 .setValueLastName(lastName)
@@ -79,18 +76,15 @@ public class BaseTest {
     public void sortClientsTest() {
         BankManagerPage bankManager = page(BankManagerPage.class);
         CustomersPage customers = bankManager.openCustomersPage();
+        customers.checkVisibilityCustomersTable().clickFirstNameSortButton(isAscendingSort);
+        List<String> sortedNames = customers.extractCustomerData("fName");
 
-        customers
-                .checkVisibilityCustomersTable()
-                .clickFirstNameSortButton(isAscendingSort);
-
-        List<String> sortedNames = customers.getCustomersFirstNames();
         List<String> expectedSortedNames = new ArrayList<>(sortedNames);
-        expectedSortedNames.sort(String::compareTo);
-
+        expectedSortedNames.sort(String::compareToIgnoreCase);
         if (!isAscendingSort) {
             Collections.reverse(expectedSortedNames);
         }
+        LOG.info("Список после сортировки: {}", sortedNames);
         LOG.info("Ожидаемый список после сортировки: {}", expectedSortedNames);
         assertEquals(sortedNames, expectedSortedNames, "Сортировка First Name не работает!");
     }
@@ -103,19 +97,16 @@ public class BaseTest {
     public void deleteCustomerFromTableTest() {
         BankManagerPage bankManager = page(BankManagerPage.class);
         CustomersPage customers = bankManager.openCustomersPage();
-
         customers.checkVisibilityCustomersTable();
-
         CustomersPage.Customer customer = customers.getClientForDeletion();
 
         if (customer.index != null) {
-            customers.deleteCustomer(customer.index)
-                    .checkVisibilityCustomersTable();
+            customers.deleteCustomer(customer).checkVisibilityCustomersTable();
         } else {
             LOG.warn("Попытка удалить клиента с Null индексом!");
         }
 
-        assertFalse(customers.getCustomersFirstNames().contains(customer.firstName),
+        assertFalse(customers.extractCustomerData("fName").contains(customer.firstName),
                 "Клиент всё ещё присутствует в списке, хотя должен был быть удалён!");
     }
 }
